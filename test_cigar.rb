@@ -28,7 +28,24 @@ class My_test < Minitest::Test
     my_number = "1234"
     bash_numbers = ["2234", "5555", "2352", "4563"]
     assert_equal(["2234"], winning_tickets_off_by_one(my_number, bash_numbers))
-  end 
+  end
 
+  def test_with_integers
+    my_number = "1234"
+    bash_numbers = ["0234", 1.to_s]
+    assert_equal(["0234"], winning_tickets_off_by_one(my_number, bash_numbers))
+  end
+
+  def test_more_numbers
+    my_number = "1234"
+    bash_numbers = ["1244", "1231235123", "55567", "12"]
+    assert_equal(["1244"], winning_tickets_off_by_one(my_number, bash_numbers))
+  end
+
+  def test_with_string
+    my_number = "1234"
+    bash_numbers = ["1235", "hello", "goodbye"]
+    assert_equal(["1235"], winning_tickets_off_by_one(my_number, bash_numbers))
+  end 
 
 end
