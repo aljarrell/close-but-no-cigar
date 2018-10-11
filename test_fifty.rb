@@ -25,9 +25,15 @@ class My_test < Minitest::Test
   end
 
   def test_five
-    my_num = ["1234"]
+    my_num = ["1234", "2234"]
     ticket_num = ["1233", "2233", "3233", "2222"]
-    assert_equal(["1234"], off_by_one_number(my_num, ticket_num))
+    assert_equal(["1234", "2234"], off_by_one_number(my_num, ticket_num))
+  end
+
+  def test_six
+    my_num = ["1234", "2234", "3234"]
+    ticket_num = ["1233", "2233", "3233", "2222", "5555"]
+    assert_equal(["1234", "2234", "3234"], off_by_one_number(my_num, ticket_num))
   end
 
 end
